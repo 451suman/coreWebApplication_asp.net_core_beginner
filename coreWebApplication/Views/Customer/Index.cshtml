@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h1>@ViewBag.Message</h1>
+<p>
+    there are @ViewBag.CustomerCount customer added into the list.
+</p>
+
+<ul>
+    @foreach (var item in ViewBag.CustomerList)
+    {
+        <li>@item.Id - @item.Name - @item.Address</li>
+    }
+    </ul>
+
+    @Html.ActionLink("Details Page", "Details","Customer");
+      

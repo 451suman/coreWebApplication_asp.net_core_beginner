@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detail Page</h1>
+
+<h1>@ViewData["Message"]</h1>
+<p>
+    There are @ViewData["CustomerCount"] customers added to the list.
+</p>
+
+<ul>
+    @foreach (var item in (List<coreWebApplication.Models.Customer>)ViewData["CustomerList"])
+    {
+        <li>@item.Id - @item.Name - @item.Address</li>
+    }
+</ul>
+
+@Html.ActionLink("Index Page", "Index", "Customer");
